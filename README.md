@@ -9,7 +9,9 @@
 Step 1: Install docker & docker-compose<br>
 Step 2: Run below command
 
-    docker-compose up
+```console
+docker-compose up
+```
 
 ---
 
