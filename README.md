@@ -1,4 +1,5 @@
-# nginx-node-auto-scaling
+# This branch mainly for load balancing the containers
+# See other branch for more on Auto Scaling techniques
 
 ### A learning example of auto scaling Nodejs server with Nginx through different technique
 
