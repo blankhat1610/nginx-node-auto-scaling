@@ -17,13 +17,12 @@ services:
     volumes:
       - ./backend:/src/app
       - /src/app/node_modules
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:3000/health" ]
-      interval: 1m
-      timeout: 10s
-      retries: 3
+    ports:
+      - 3000:3000
+    logging:
+      driver: json-file
     deploy:
-      replicas: 3
-      update_config:
-        parallelism: 1
-        delay: 10s
+      labels:
+        swarm.autoscaler: 'true'
+        swarm.autoscaler.maximum: '5'
+        swarm.autoscaler.minimum: '3'
